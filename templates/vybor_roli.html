@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/roli.css') }}" type="text/css">
+<body style="background: url('static/img/fon.jpg') no-repeat center center fixed;
+   background-size: cover;">
+<div class="button-container">
+    <a href="/register-teacher" class="button">
+        <img src="static/img/teacher.png" alt="Button 1">
+        <span class="button-text">Учитель</span>
+    </a>
+    <a href="/register-organiz" class="button">
+        <img src="static/img/organiz.png" alt="Button 2">
+        <span class="button-text">Представитель организации</span>
+    </a>
+</div>
+</body>
+{% endblock %}
