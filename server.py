@@ -168,7 +168,7 @@ def add_summary():
             summaries.obrazovanie = form.obrazovanie.data
             summaries.dop_obrazovanie = form.dop_obrazovanie.data
             summaries.experience = form.experience.data
-            summaries.dop_infa = form.experience.data
+            summaries.dop_infa = form.dop_infa.data
             summaries.job = form.job.data
             summaries.url_on_files = form.url_on_files.data
             current_user.summaries.append(summaries)
@@ -211,6 +211,7 @@ def edit_summaries(id):
             summaries.experience = form.experience.data
             summaries.dop_infa = form.dop_infa.data
             summaries.job = form.job.data
+            summaries.url_on_files = form.url_on_files.data
             db_sess.commit()
             return redirect('/redirect-people')
         else:
@@ -531,7 +532,7 @@ def edit_profile():
         return redirect('/profile')
     return render_template('register.html',
                            title='Редактирование Профиля',
-                           form=form, url1='/profile')
+                           form=form, url1='/profile', current_user=current_user)
 
 
 @app.route('/edit-photo', methods=['GET', 'POST'])
